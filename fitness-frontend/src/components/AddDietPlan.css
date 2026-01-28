@@ -1,0 +1,74 @@
+/* FULL SCREEN BACKGROUND */
+.add-diet-plan-page {
+    min-height: 100vh;
+    background-image: url("C:\Users\ashmi\OneDrive\Desktop\ZEUS\fitness\fitness-frontend\src\components\diet.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM CONTAINER */
+.add-diet-plan-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 25px;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* TITLE */
+.form-title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* FORM */
+.add-diet-plan-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* BUTTON */
+.save-button {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}

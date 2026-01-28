@@ -1,0 +1,81 @@
+/* FULL SCREEN BACKGROUND */
+.add-workout-bg {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("C:\Users\ashmi\OneDrive\Desktop\ZEUS\fitness\fitness-frontend\src\components\manual.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.add-workout-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* FORM CARD */
+.add-workout-container {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* FORM STYLES */
+.form-title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.add-workout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* BUTTON */
+.save-button {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}

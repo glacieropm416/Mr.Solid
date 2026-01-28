@@ -1,0 +1,96 @@
+/* FULL SCREEN BACKGROUND */
+.add-user-bg {
+    min-height: 120vh;
+    width: 100%;
+    background-image: url("C:\Users\ashmi\OneDrive\Desktop\ZEUS\fitness\fitness-frontend\src\components\Screenshot 2026-01-28 132228.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.add-user-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* FORM CONTAINER */
+.add-user-container {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* FORM STYLES */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #222;
+}
+
+.add-user-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* BUTTONS */
+.save-button {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+.logout-button {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #b52a37;
+}
