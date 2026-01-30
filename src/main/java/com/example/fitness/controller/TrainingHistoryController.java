@@ -7,6 +7,7 @@ import com.example.fitness.service.TrainingHistoryService;
 
 @RestController
 @RequestMapping("/history")
+@CrossOrigin(origins = "http://localhost:3000") // <-- ALLOWS React
 public class TrainingHistoryController {
 
     private final TrainingHistoryService service;

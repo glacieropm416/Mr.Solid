@@ -1,8 +1,8 @@
-/* FULL SCREEN BACKGROUND */
+/* ================= FULL SCREEN BACKGROUND ================= */
 .add-user-bg {
     min-height: 120vh;
     width: 100%;
-    background-image: url("C:\Users\ashmi\OneDrive\Desktop\ZEUS\fitness\fitness-frontend\src\components\Screenshot 2026-01-28 132228.png");
+    background-image: url("../components/Screenshot 2026-01-28 132228.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,33 +13,53 @@
     position: relative;
 }
 
-/* DARK OVERLAY */
+/* Dark overlay */
 .add-user-bg::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.65);
 }
 
-/* FORM CONTAINER */
+/* ================= GLASS + GRADIENT CARD ================= */
 .add-user-container {
     position: relative;
-    max-width: 400px;
-    width: 100%;
-    padding: 25px;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    width: 420px;
+    padding: 30px;
+    border-radius: 18px;
+
+    /* Glassmorphism */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 2px solid transparent;
+    background-clip: padding-box;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    z-index: 1;
 }
 
-/* FORM STYLES */
+/* Gradient Border */
+.add-user-container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    z-index: -1;
+}
+
+/* ================= TITLE ================= */
 .form-title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-size: 26px;
-    color: #222;
+    font-weight: bold;
+    color: #ffffff;
 }
 
+/* ================= FORM ================= */
 .add-user-form {
     display: flex;
     flex-direction: column;
@@ -50,47 +70,71 @@
 }
 
 .form-group label {
-    display: block;
     margin-bottom: 6px;
-    font-weight: bold;
-    color: #444;
+    font-weight: 600;
+    color: #f1f1f1;
 }
 
+/* Inputs */
 .form-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
+    border: none;
+
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+
+    transition: 0.3s;
 }
 
-/* BUTTONS */
+.form-group input::placeholder {
+    color: #ddd;
+}
+
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.6);
+}
+
+/* ================= BUTTONS ================= */
 .save-button {
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 12px;
     font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .save-button:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 198, 255, 0.5);
 }
 
 .logout-button {
     margin-top: 10px;
     padding: 12px;
     font-size: 16px;
-    background-color: #dc3545;
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .logout-button:hover {
-    background-color: #b52a37;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 75, 43, 0.5);
 }

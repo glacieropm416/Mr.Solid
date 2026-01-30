@@ -1,103 +1,109 @@
 /* Page container */
 .login-page {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(135deg, #cfd9df, #b993d6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  /* Animated background icons */
-  .workout-animation {
-    position: absolute;
-    font-size: 80px;
-    opacity: 0.35;
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  /* Icon positions */
-  .dumbbell {
-    top: 15%;
-    left: 20%;
-  }
-  
-  .runner {
-    top: 50%;
-    left: 65%;
-  }
-  
-  .yoga {
-    top: 80%;
-    left: 35%;
-  }
-  
-  /* Login card */
-  .login-container {
-    position: relative;
-    z-index: 10;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    text-align: center;
-  }
-  
-  .login-title {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Form */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  
-  .form-group label {
-    font-weight: bold;
-    margin-bottom: 6px;
-    color: #555;
-  }
-  
-  .form-group input {
-    padding: 10px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  .form-group input:focus {
-    outline: none;
-    border-color: #6a5acd;
-  }
-  
-  /* Button */
-  .login-button {
-    background: #6a5acd;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background: #483d8b;
-  }
-  
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #d7e5f4, #d9e2ec); /* lighter background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Animated background icons */
+.workout-animation {
+  position: absolute;
+  font-size: 80px;
+  opacity: 0.35;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Icon positions */
+.dumbbell {
+  top: 15%;
+  left: 20%;
+}
+
+.runner {
+  top: 50%;
+  left: 65%;
+}
+
+.yoga {
+  top: 80%;
+  left: 35%;
+}
+
+/* Login card */
+.login-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(160, 110, 110, 0.95); /* more solid light card */
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* softer shadow */
+  text-align: center;
+}
+
+/* Title */
+.login-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #111; /* darker text for light mode */
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #222; /* darker label */
+}
+
+.form-group input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #aaa; /* slightly darker border */
+  border-radius: 6px;
+  color: #111; /* darker input text */
+  background-color: #fff; /* input background white */
+}
+
+.form-group input::placeholder {
+  color: #888; /* placeholder slightly gray */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6a5acd;
+}
+
+/* Button */
+.login-button {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: #483d8b;
+}

@@ -1,10 +1,8 @@
 package com.example.fitness.service;
 
-import com.example.fitness.model.DietPlanRequest;
 import com.example.fitness.model.DietPlan;
-import com.example.fitness.model.User;
+import com.example.fitness.model.DietPlanRequest;
 import com.example.fitness.repository.DietPlanRepository;
-import com.example.fitness.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,35 +10,37 @@ import java.util.List;
 @Service
 public class DietPlanService {
 
-    private final DietPlanRepository repo;
-    private final UserRepository userRepo;
+    private final DietPlanRepository repository;
 
-    public DietPlanService(DietPlanRepository repo, UserRepository userRepo) {
-        this.repo = repo;
-        this.userRepo = userRepo;
+    public DietPlanService(DietPlanRepository repository) {
+        this.repository = repository;
     }
 
-    // Save using DTO (recommended)
-    public DietPlan save(DietPlanRequest request) {
-        User user = userRepo.findById(request.getUserId())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+    public List<DietPlan> getAll() {
+        return repository.findAll();
+    }
 
+    public DietPlan save(DietPlanRequest request) {
         DietPlan diet = new DietPlan();
         diet.setMealType(request.getMealType());
         diet.setFoodItems(request.getFoodItems());
         diet.setCalories(request.getCalories());
-        diet.setUser(user);
-
-        return repo.save(diet);
+        return repository.save(diet);
     }
 
-    // Save using Entity (optional / legacy)
-    public DietPlan save(DietPlan dietPlan) {
-        return repo.save(dietPlan);
+    public DietPlan update(Long id, DietPlanRequest request) {
+        DietPlan diet = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Diet plan not found"));
+        diet.setMealType(request.getMealType());
+        diet.setFoodItems(request.getFoodItems());
+        diet.setCalories(request.getCalories());
+        return repository.save(diet);
     }
 
-    // Get all diet plans
-    public List<DietPlan> getAll() {
-        return repo.findAll();
+    public void delete(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Diet plan not found with id: " + id);
+        }
+        repository.deleteById(id);
     }
 }

@@ -1,119 +1,210 @@
-/* Reset */
+/* RESET */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-/* 🔥 DARK MOVING BACKGROUND */
-.animated-bg {
+/* ROOT */
+.app {
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 🌌 Animated Background (Dark Mode Only) */
+.app.dark .animated-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(
-    120deg,
-    #0f2027,
-    #203a43,
-    #2c5364
-  );
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
   background-size: 300% 300%;
   animation: bgMove 15s ease infinite;
 }
 
-/* Background animation */
 @keyframes bgMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* App layout */
+/* 🌙 DARK MODE */
+.app.dark {
+  color: #ffffff;
+}
+
+/* ☀️ LIGHT MODE */
+.app.light {
+  background: #f4f6f8;
+  color: #111111;
+}
+
+/* Force black text in light mode */
+.app.light h1,
+.app.light h2,
+.app.light h3,
+.app.light h4,
+.app.light h5,
+.app.light h6,
+.app.light p,
+.app.light span,
+.app.light label,
+.app.light a,
+.app.light li {
+  color: #111111;
+}
+
+/* Glass Effect */
+.glass {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+/* Light mode glass adjustment */
+.app.light .glass {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Layout */
 .app-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
   text-align: center;
 }
 
-/* Title */
-.app-title {
-  font-size: 36px;
-  color: #00c6ff;
-  margin-bottom: 20px;
-  font-weight: bold;
-  letter-spacing: 2px;
+/* Toggle Button */
+.dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.app.light .dark-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Navbar */
-.navbar {
-  background-color: rgba(0, 123, 255, 0.9);
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
 .nav-links {
   list-style: none;
   display: flex;
   justify-content: center;
   padding: 0;
-  margin: 0;
 }
 
 .nav-links li {
-  margin: 0 15px;
+  margin: 0 12px;
 }
 
+/* Navbar links */
 .nav-links a {
   text-decoration: none;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 4px;
-  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  background-color: #0056b3;
-  transform: scale(1.1);
+/* Dark navbar links */
+.app.dark .nav-links a {
+  color: white;
+}
+
+/* Light navbar links */
+.app.light .nav-links a {
+  color: #111111;
 }
 
 /* Content */
 .content {
   margin-top: 20px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  padding: 25px;
 }
 
-/* Page transitions */
+/* Page Transitions */
 .fade-enter {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(15px);
 }
-
 .fade-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: 0.4s;
 }
-
-.fade-exit {
-  opacity: 1;
-}
-
 .fade-exit-active {
   opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(-15px);
+}
+
+/* Form and List Cards */
+.form-container,
+.list-container {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+  color: inherit;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.app.dark .form-container,
+.app.dark .list-container {
+  background: rgba(0,0,0,0.4);
+  color: #eee;
+}
+
+/* Form styling */
+.form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+.form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form button {
+  padding: 10px 15px;
+  border: none;
+  background: #6a5acd;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.form button:hover {
+  background: #483d8b;
+}
+
+/* Table styling */
+.list-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.list-container th,
+.list-container td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.app.dark .list-container th,
+.app.dark .list-container td {
+  border-color: #555;
 }

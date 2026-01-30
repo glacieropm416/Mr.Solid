@@ -18,15 +18,23 @@ public class DietPlanController {
         this.service = service;
     }
 
-    // Add diet plan using DTO
     @PostMapping
     public DietPlan add(@RequestBody DietPlanRequest request) {
         return service.save(request);
     }
 
-    // Get all diet plans
     @GetMapping
     public List<DietPlan> getAll() {
         return service.getAll();
+    }
+
+    @PutMapping("/{id}")
+    public DietPlan update(@PathVariable Long id, @RequestBody DietPlanRequest request) {
+        return service.update(id, request);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        service.delete(id);
     }
 }

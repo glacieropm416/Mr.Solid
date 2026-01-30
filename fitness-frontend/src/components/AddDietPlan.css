@@ -1,7 +1,10 @@
+/* ============================= */
 /* FULL SCREEN BACKGROUND */
+/* ============================= */
 .add-diet-plan-page {
     min-height: 100vh;
-    background-image: url("C:\Users\ashmi\OneDrive\Desktop\ZEUS\fitness\fitness-frontend\src\components\diet.jpg");
+
+    background-image: url("C:/Users/ashmi/OneDrive/Desktop/ZEUS/fitness/fitness-frontend/src/components/diet.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,28 +12,56 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+    overflow: hidden;
 }
 
-/* FORM CONTAINER */
+/* DARK OVERLAY */
+.add-diet-plan-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* ============================= */
+/* GLASS FORM CONTAINER */
+/* ============================= */
 .add-diet-plan-container {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     max-width: 420px;
-    padding: 25px;
-    border-radius: 10px;
+    padding: 30px;
 
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
+/* ============================= */
 /* TITLE */
+/* ============================= */
 .form-title {
     text-align: center;
     font-size: 26px;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    margin-bottom: 22px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
+/* ============================= */
 /* FORM */
+/* ============================= */
 .add-diet-plan-form {
     display: flex;
     flex-direction: column;
@@ -44,31 +75,91 @@
     font-weight: 600;
     margin-bottom: 6px;
     display: block;
-    color: #333;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .form-group input {
     width: 100%;
-    padding: 10px;
+    padding: 11px;
     font-size: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
 }
 
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: rgba(40, 167, 69, 0.9);
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.4);
+}
+
+/* ============================= */
 /* BUTTON */
+/* ============================= */
 .save-button {
-    margin-top: 10px;
-    padding: 12px;
+    margin-top: 12px;
+    padding: 13px;
     font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #28a745;
+    font-weight: 600;
+
+    color: #fff;
+    background: rgba(40, 167, 69, 0.9);
+
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
 }
 
 .save-button:hover {
-    background-color: #218838;
+    background: rgba(40, 167, 69, 1);
+    transform: translateY(-2px);
+}
+
+/* ============================= */
+/* DARK MODE OVERRIDES */
+/* Apply by adding class "dark-mode" to body or parent */
+/* ============================= */
+
+.dark-mode .add-diet-plan-page::before {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.dark-mode .add-diet-plan-container {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .form-title {
+    color: #f1f1f1;
+}
+
+.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+.dark-mode .form-group input {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.dark-mode .form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode .save-button {
+    background: rgba(0, 200, 83, 0.9);
+}
+
+.dark-mode .save-button:hover {
+    background: rgba(0, 200, 83, 1);
 }

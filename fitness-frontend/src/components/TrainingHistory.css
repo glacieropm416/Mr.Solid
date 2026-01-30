@@ -1,0 +1,121 @@
+/* ============================= */
+/* Background */
+/* ============================= */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ============================= */
+/* Glass effect */
+/* ============================= */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================= */
+/* Layout */
+/* ============================= */
+.main-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================= */
+/* Containers */
+/* ============================= */
+.form-container,
+.list-container {
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+}
+
+/* ============================= */
+/* Headings */
+/* ============================= */
+.form-container h2,
+.list-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 10px;
+}
+
+/* ============================= */
+/* Form */
+/* ============================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form label {
+  font-weight: 600;
+}
+
+.form input {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.form button {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+}
+
+/* ============================= */
+/* Table */
+/* ============================= */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.history-table th {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 14px;
+}
+
+.history-table td {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.history-table tr:hover td {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================= */
+/* Empty */
+/* ============================= */
+.empty {
+  text-align: center;
+  opacity: 0.8;
+}

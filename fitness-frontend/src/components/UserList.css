@@ -2,7 +2,7 @@
 .user-list-bg {
     min-height: 100vh;
     width: 100%;
-    background-image: url("C:\Users\ashmi\OneDrive\Desktop\ZEUS\fitness\fitness-frontend\src\components\Screenshot 2026-01-28 134550.png");
+    background-image: url("../components/Screenshot 2026-01-28 134550.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,15 +21,19 @@
     background: rgba(0, 0, 0, 0.55);
 }
 
-/* CARD CONTAINER */
+/* CARD CONTAINER (GLASS) */
 .user-list-container {
     position: relative;
     max-width: 900px;
     width: 95%;
     padding: 25px;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.96);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* TITLE */
@@ -37,7 +41,23 @@
     text-align: center;
     font-size: 26px;
     margin-bottom: 20px;
-    color: #222;
+    font-weight: bold;
+}
+
+/* DARK MODE TEXT */
+.app.dark .user-list-title,
+.app.dark .user-list-table th,
+.app.dark .user-list-table td,
+.app.dark .no-data {
+    color: #ffffff;
+}
+
+/* LIGHT MODE TEXT */
+.app.light .user-list-title,
+.app.light .user-list-table th,
+.app.light .user-list-table td,
+.app.light .no-data {
+    color: #111111;
 }
 
 /* ADD BUTTON */
@@ -46,73 +66,85 @@
     margin-bottom: 15px;
     padding: 10px 15px;
     font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .add-user-button:hover {
-    background-color: #0056b3;
+    opacity: 0.9;
 }
 
 /* TABLE */
 .user-list-table {
     width: 100%;
     border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-.user-list-table th,
-.user-list-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
+/* Table headers */
 .user-list-table th {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
     color: white;
+    padding: 12px;
 }
 
-.user-list-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+/* Table cells */
+.user-list-table td {
+    padding: 12px;
 }
 
-.user-list-table tr:hover {
-    background-color: #e9ecef;
+/* DARK MODE ROWS */
+.app.dark .user-list-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
+.app.dark .user-list-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* LIGHT MODE ROWS */
+.app.light .user-list-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.app.light .user-list-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* NO DATA */
 .no-data {
     text-align: center;
-    color: #888;
     font-style: italic;
 }
 
 /* ACTION BUTTONS */
 .edit-button {
-    background-color: #ffc107;
-    color: white;
+    background: linear-gradient(135deg, #ffc107, #ffdd57);
+    color: #111;
     border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-right: 5px;
-}
-
-.edit-button:hover {
-    background-color: #e0a800;
+    margin-right: 6px;
+    font-weight: bold;
 }
 
 .delete-button {
-    background-color: #dc3545;
+    background: linear-gradient(135deg, #dc3545, #ff6b6b);
     color: white;
     border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
+    padding: 6px 12px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
+/* Hover effects */
+.edit-button:hover,
 .delete-button:hover {
-    background-color: #c82333;
+    opacity: 0.85;
 }
